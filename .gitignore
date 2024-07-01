@@ -1,0 +1,5 @@
+node_modules/   
+# as node modules are system dependent and bulky in nature
+
+.env
+# sometimes crucial info is there which we dont want to share
