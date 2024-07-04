@@ -2,10 +2,13 @@
 // to automattically restart server
 // use NODEMON
 const express = require('express')
-const ServerConfig = require('./config/ServerConfig')
+const ServerConfig = require('./config/ServerConfig');
+const connectDB = require('./config/DbConfig');
+
 
 const app = express();
 
-app.listen(ServerConfig.PORT,()=>{
+app.listen(ServerConfig.PORT,async ()=>{
+    await connectDB();
     console.log(`server started at port ${ServerConfig.PORT}...!!`);
 })
